@@ -1,2 +1,2 @@
-web: npm run start:heroku-web
-worker: npm start: heroku-worker
+web: npm run start:web
+worker: npm start:worker
