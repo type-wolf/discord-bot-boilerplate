@@ -6,6 +6,7 @@
 		"build:web": "npm run --prefix web build",
 		"build:worker": "npm run --prefix worker build",
 		"build:all": "npm run --prefix web build && npm run --prefix worker build",
+		"heroku-postbuild": "npm run build:all",
 		"dev:web": "npm run --prefix web dev",
 		"dev:worker": "npm run --prefix worker dev",
 		"start:web": "npm run --prefix web start",
@@ -20,6 +21,10 @@
 		"test:worker": "npm run --prefix worker test",
 		"test:all": "npm run --prefix web test && npm run --prefix worker test"
 	},
+	"workspaces": [
+		"web",
+		"worker"
+	],
 	"volta": {
 		"node": "18.15.0",
 		"npm": "9.5.1"

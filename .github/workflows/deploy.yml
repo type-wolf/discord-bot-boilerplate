@@ -18,9 +18,7 @@ jobs:
                   node-version: 18
 
             - name: Install Dependencies
-              run: |
-                  npm ci --prefix web;
-                  npm ci --prefix worker
+              run: npm ci
 
             - name: Build
               run: npm run build:all
@@ -35,4 +33,3 @@ jobs:
                   HD_BOT_TOKEN: ${{secrets.BOT_TOKEN}}
                   HD_CLIENT_ID: ${{secrets.CLIENT_ID}}
                   HD_GUILD_ID: ${{secrets.GUILD_ID}}
-                  HD_MONGODB_URI: ${{secrets.MONGODB_URI}}
