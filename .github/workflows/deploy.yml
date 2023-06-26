@@ -18,7 +18,7 @@ jobs:
                   node-version: 18
 
             - name: Install Dependencies
-              run: npm ci --prefix web worker
+              run: npm ci --prefix web --prefix worker
 
             - name: Build
               run: npm run build:all
