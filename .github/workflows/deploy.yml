@@ -32,5 +32,5 @@ jobs:
               env:
                   HD_BOT_TOKEN: ${{secrets.BOT_TOKEN}}
                   HD_CLIENT_ID: ${{secrets.CLIENT_ID}}
-                  HD_GUILD_ID: ${{secrets.CLIENT_ID}}
+                  HD_GUILD_ID: ${{secrets.GUILD_ID}}
                   HD_MONGODB_URI: ${{secrets.MONGODB_URI}}
