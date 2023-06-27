@@ -1,14 +1,12 @@
 {
+	"extends": "../tsconfig.json",
 	"compilerOptions": {
 		"target": "ES6",
 		"module": "CommonJS",
-		"rootDir": "./src",
 		"outDir": "./dist",
-		"strict": true,
-		"esModuleInterop": true,
-		"skipLibCheck": true,
-		"forceConsistentCasingInFileNames": true,
-		"moduleResolution": "node",
-		"resolveJsonModule": true
-	}
+		"paths": {
+			"@share/*": ["../share/*"]
+		}
+	},
+	"include": ["src/**/*.ts"]
 }

@@ -6,7 +6,6 @@
 		"build:web": "npm run --prefix web build",
 		"build:worker": "npm run --prefix worker build",
 		"build:all": "npm run --prefix web build && npm run --prefix worker build",
-		"heroku-postbuild": "npm run build:all",
 		"dev:web": "npm run --prefix web dev",
 		"dev:worker": "npm run --prefix worker dev",
 		"start:web": "npm run --prefix web start",
