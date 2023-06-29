@@ -3,13 +3,11 @@
 	"compilerOptions": {
 		"target": "ES6",
 		"module": "CommonJS",
-		"outDir": "./dist"
-	},
-	"references": [
-		{
-			"path": "../share/*"
+		"outDir": "./dist",
+		"paths": {
+			"@share/*": ["../share/*"]
 		}
-	],
+	},
 	"include": ["src/**/*.ts"],
 	"exclude": ["src/__test__"]
 }
