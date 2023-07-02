@@ -31,8 +31,18 @@ const createButton = (datas: CreateButtonType) => {
 };
 
 export const createButtons = (datas: CreateButtonType[]) => {
-	const buttons = datas.map((data) => createButton(data));
-	return buttons;
+	try {
+		const buttons = datas.map((data) => createButton(data));
+		const newButtons = buttons.filter((button) => button !== undefined) as MessageButton[];
+		return newButtons;
+	} catch (e: unknown) {
+		if (e instanceof DiscordAPIError) {
+			return undefined;
+		}
+		if (e instanceof Error) {
+			return undefined;
+		}
+	}
 };
 
 export default createButton;

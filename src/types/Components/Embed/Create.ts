@@ -1,5 +1,5 @@
 import type { EmbedAuthorData, EmbedFooterData } from "@discordjs/builders";
-import type { ColorResolvable, EmbedFieldData } from "discord.js";
+import type { ColorResolvable, EmbedFieldData, User } from "discord.js";
 
 export type CreateEmbed = {
 	title: string;
@@ -12,4 +12,11 @@ export type CreateEmbed = {
 	url?: string;
 	timestamp?: number | Date;
 	thumbnailUrl?: string;
+};
+
+export type LogEmbed = {
+	status: "成功" | "失敗" | "警告" | "注意";
+	actionName: string;
+	user: User;
+	description?: string;
 };

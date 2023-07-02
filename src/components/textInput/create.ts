@@ -1,7 +1,7 @@
 import { TextInputComponent, DiscordAPIError } from "discord.js";
 import type { TextInputComponentOptions } from "discord.js";
 
-export const createTextInputs = (datas: TextInputComponentOptions) => {
+const createTextInput = (datas: TextInputComponentOptions) => {
 	const { customId, label, maxLength, minLength, placeholder, required, style, value } = datas;
 	try {
 		const textInput = new TextInputComponent();
@@ -39,3 +39,20 @@ export const createTextInputs = (datas: TextInputComponentOptions) => {
 		}
 	}
 };
+
+export const createTextInputs = (datas: TextInputComponentOptions[]) => {
+	try {
+		const textInputs = datas.map((data) => createTextInput(data));
+		const newTextInputs = textInputs.filter((textInput) => textInput !== undefined) as TextInputComponent[];
+		return newTextInputs;
+	} catch (e: unknown) {
+		if (e instanceof DiscordAPIError) {
+			return undefined;
+		}
+		if (e instanceof Error) {
+			return undefined;
+		}
+	}
+};
+
+export default createTextInput;

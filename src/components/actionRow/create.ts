@@ -1,10 +1,14 @@
 import { MessageActionRow, ModalActionRowComponent, DiscordAPIError } from "discord.js";
-import { ComponentsType, TextInputComponents } from "../../types/Components/ActionRow/Add";
+import { MessageComponentsType, ModalComponentsType } from "../../types/Components/ActionRow/Add";
 
-export const addMessageActionRow = (components: ComponentsType) => {
+export const addMessageActionRow = (components: MessageComponentsType) => {
 	const actionRow = new MessageActionRow();
 	try {
-		actionRow.addComponents(...components);
+		if (Array.isArray(components)) {
+			actionRow.addComponents(...components);
+		} else {
+			actionRow.addComponents(components);
+		}
 		return actionRow;
 	} catch (e: unknown) {
 		if (e instanceof DiscordAPIError) {
@@ -16,10 +20,14 @@ export const addMessageActionRow = (components: ComponentsType) => {
 	}
 };
 
-export const addModalActionRow = (components: TextInputComponents) => {
+export const addModalActionRow = (components: ModalComponentsType) => {
 	const actionRow = new MessageActionRow<ModalActionRowComponent>();
 	try {
-		actionRow.addComponents(...components);
+		if (Array.isArray(components)) {
+			actionRow.addComponents(...components);
+		} else {
+			actionRow.addComponents(components);
+		}
 		return actionRow;
 	} catch (e: unknown) {
 		if (e instanceof DiscordAPIError) {

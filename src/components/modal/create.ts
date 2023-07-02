@@ -1,7 +1,7 @@
 import { Modal, DiscordAPIError } from "discord.js";
 import type { CreateModalType } from "../../types/Components/Modal/Create";
 
-export const createModal = (datas: CreateModalType) => {
+const createModal = (datas: CreateModalType) => {
 	const { id, title, actionRow } = datas;
 	try {
 		const modal = new Modal();
@@ -18,3 +18,5 @@ export const createModal = (datas: CreateModalType) => {
 		}
 	}
 };
+
+export default createModal;

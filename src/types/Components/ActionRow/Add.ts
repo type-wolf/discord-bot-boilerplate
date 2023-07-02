@@ -1,9 +1,5 @@
 import type { MessageButton, MessageSelectMenu, TextInputComponent } from "discord.js";
 
-export type ButtonComponents = MessageButton | MessageButton[];
+export type MessageComponentsType = (MessageButton | MessageSelectMenu) | (MessageButton[] | MessageSelectMenu[]);
 
-export type SelectMenuComponents = MessageSelectMenu | MessageSelectMenu[];
-
-export type TextInputComponents = TextInputComponent | TextInputComponent[];
-
-export type ComponentsType = ButtonComponents | SelectMenuComponents;
+export type ModalComponentsType = TextInputComponent | TextInputComponent[];
