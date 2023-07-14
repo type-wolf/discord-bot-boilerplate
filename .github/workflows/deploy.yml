@@ -7,6 +7,10 @@ on:
 jobs:
     build-and-deploy:
         runs-on: ubuntu-latest
+        env:
+            BOT_TOKEN: ${{secrets.BOT_TOKEN}}
+            CLIENT_ID: ${{secrets.CLIENT_ID}}
+            GUILD_ID: ${{secrets.GUILD_ID}}
 
         steps:
             - name: Checkout Repository
